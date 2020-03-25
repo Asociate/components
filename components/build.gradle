@@ -1,16 +1,9 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'maven'
 
-repositories {
-    mavenCentral()
-    google()
-    jcenter()
-    maven { url "https://jitpack.io" }
-}
-
-group = 'com.github.jitpack'
-version = '1.0'
+group = 'com.github.asociate'
 
 android {
     compileSdkVersion 29
