@@ -1,6 +1,7 @@
 package com.asociateapp.components.progress.road
 
 import android.content.Context
+import android.os.Build
 import android.util.AttributeSet
 import android.view.animation.Animation
 import android.widget.ProgressBar
@@ -19,8 +20,10 @@ class HorizontalRoad @JvmOverloads constructor(
     private var state = RoadState.IDLE
 
     fun setRoadStyler(roadStyler: RoadStyler) {
-        secondaryProgressTintList = roadStyler.roadIdleColor
-        progressTintList = roadStyler.roadProgressColor
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            secondaryProgressTintList = roadStyler.roadIdleColor
+            progressTintList = roadStyler.roadProgressColor
+        }
     }
 
     override fun moveNext(onRoadMovementFinished: () -> Unit) {
