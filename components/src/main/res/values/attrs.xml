@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="HorizontalProgress">
+        <attr name="stepsCount" format="integer"/>
+        <attr name="addRoads" format="boolean"/>
+        <attr name="stepBackgroundCompleted" format="reference"/>
+        <attr name="stepBackgroundIdle" format="reference"/>
+        <attr name="stepIcon" format="reference"/>
+        <attr name="stepSize" format="dimension"/>
+        <attr name="roadIdleColor" format="color"/>
+        <attr name="roadProgressColor" format="color"/>
+    </declare-styleable>
+</resources>
