@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <declare-styleable name="HorizontalProgress">
+    <declare-styleable name="AsociateStepsProgress">
         <attr name="stepsCount" format="integer"/>
         <attr name="addRoads" format="boolean"/>
         <attr name="stepBackgroundCompleted" format="reference"/>
@@ -10,4 +10,13 @@
         <attr name="roadIdleColor" format="color"/>
         <attr name="roadProgressColor" format="color"/>
     </declare-styleable>
+
+    <declare-styleable name="AsociateBulletText">
+        <attr name="bulletSize" format="dimension"/>
+        <attr name="bulletColor" format="color"/>
+        <attr name="bulletTextSize" format="dimension"/>
+        <attr name="bulletTextColor" format="color"/>
+        <attr name="bulletText" format="string"/>
+    </declare-styleable>
+
 </resources>

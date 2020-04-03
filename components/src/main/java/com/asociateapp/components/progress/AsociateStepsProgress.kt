@@ -61,34 +61,34 @@ class AsociateStepsProgress @JvmOverloads constructor(
 
     private fun initializeAttributes(attrs: AttributeSet?) {
         attrs?.run {
-            val typedArray = context.obtainStyledAttributes(attrs, R.styleable.HorizontalProgress)
+            val typedArray = context.obtainStyledAttributes(attrs, R.styleable.AsociateStepsProgress)
             buildStepStylerAttrs(typedArray)
             buildRoadStylerAttrs(typedArray)
-            stepsCount = typedArray.getInteger(R.styleable.HorizontalProgress_stepsCount, 0)
-            joinByRoads = typedArray.getBoolean(R.styleable.HorizontalProgress_addRoads, false)
+            stepsCount = typedArray.getInteger(R.styleable.AsociateStepsProgress_stepsCount, 0)
+            joinByRoads = typedArray.getBoolean(R.styleable.AsociateStepsProgress_addRoads, false)
             stepStyler.roadsAvailable = joinByRoads
             typedArray.recycle()
         }
     }
 
     private fun buildStepStylerAttrs(typedArray: TypedArray) {
-        stepStyler.stepSize = typedArray.getDimension(R.styleable.HorizontalProgress_stepSize, stepStyler.stepSize.toFloat()).toInt()
-        typedArray.getDrawable(R.styleable.HorizontalProgress_stepBackgroundCompleted)?.let {
+        stepStyler.stepSize = typedArray.getDimension(R.styleable.AsociateStepsProgress_stepSize, stepStyler.stepSize.toFloat()).toInt()
+        typedArray.getDrawable(R.styleable.AsociateStepsProgress_stepBackgroundCompleted)?.let {
             stepStyler.completedStepBackground = it
         }
-        typedArray.getDrawable(R.styleable.HorizontalProgress_stepBackgroundIdle)?.let {
+        typedArray.getDrawable(R.styleable.AsociateStepsProgress_stepBackgroundIdle)?.let {
             stepStyler.idleStepBackground = it
         }
-        typedArray.getDrawable(R.styleable.HorizontalProgress_stepIcon)?.let {
+        typedArray.getDrawable(R.styleable.AsociateStepsProgress_stepIcon)?.let {
             stepStyler.completedStepIcon = it
         }
     }
 
     private fun buildRoadStylerAttrs(typedArray: TypedArray) {
-        typedArray.getColorStateList(R.styleable.HorizontalProgress_roadProgressColor)?.let {
+        typedArray.getColorStateList(R.styleable.AsociateStepsProgress_roadProgressColor)?.let {
             roadStyler.roadProgressColor = it
         }
-        typedArray.getColorStateList(R.styleable.HorizontalProgress_roadIdleColor)?.let {
+        typedArray.getColorStateList(R.styleable.AsociateStepsProgress_roadIdleColor)?.let {
             roadStyler.roadIdleColor = it
         }
     }
