@@ -29,7 +29,6 @@ class AsociateStepsProgress @JvmOverloads constructor(
     private var currentPosition = 0
     private var initialSetUpCompleted = false
     private var stepsCount = 0
-    private var joinByRoads = false
 
     fun goToNextStep() {
         val nextPosition = currentPosition + 1
@@ -65,10 +64,9 @@ class AsociateStepsProgress @JvmOverloads constructor(
             buildStepStylerAttrs(typedArray)
             buildRoadStylerAttrs(typedArray)
             stepsCount = typedArray.getInteger(R.styleable.AsociateStepsProgress_stepsCount, 0)
-            joinByRoads = typedArray.getBoolean(R.styleable.AsociateStepsProgress_addRoads, false)
-            stepStyler.roadsAvailable = joinByRoads
             typedArray.recycle()
         }
+        stepStyler.roadsAvailable = true
     }
 
     private fun buildStepStylerAttrs(typedArray: TypedArray) {
@@ -100,7 +98,7 @@ class AsociateStepsProgress @JvmOverloads constructor(
                 val step = Step(context, stepStyler = stepStyler)
                 addView(step)
 
-                if (childCount + 1 != stepsCount && joinByRoads) {
+                if (childCount + 1 != stepsCount) {
                     val road = HorizontalRoad(context)
                     road.setRoadStyler(roadStyler)
                     addView(road)

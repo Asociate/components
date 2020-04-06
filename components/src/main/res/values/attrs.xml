@@ -1,14 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <attr name="stepsCount" format="integer"/>
+    <attr name="stepBackgroundCompleted" format="reference"/>
+    <attr name="stepBackgroundIdle" format="reference"/>
+    <attr name="stepIcon" format="reference"/>
+    <attr name="stepSize" format="dimension"/>
+
     <declare-styleable name="AsociateStepsProgress">
-        <attr name="stepsCount" format="integer"/>
-        <attr name="addRoads" format="boolean"/>
-        <attr name="stepBackgroundCompleted" format="reference"/>
-        <attr name="stepBackgroundIdle" format="reference"/>
-        <attr name="stepIcon" format="reference"/>
-        <attr name="stepSize" format="dimension"/>
+        <attr name="stepsCount"/>
+        <attr name="stepBackgroundCompleted"/>
+        <attr name="stepBackgroundIdle"/>
+        <attr name="stepIcon"/>
+        <attr name="stepSize"/>
         <attr name="roadIdleColor" format="color"/>
         <attr name="roadProgressColor" format="color"/>
+    </declare-styleable>
+
+    <declare-styleable name="AsociateStepsIndicator">
+        <attr name="stepsCount"/>
+        <attr name="stepBackgroundCompleted"/>
+        <attr name="stepBackgroundIdle"/>
+        <attr name="stepIcon"/>
+        <attr name="stepSize"/>
     </declare-styleable>
 
     <declare-styleable name="AsociateBulletText">
@@ -18,5 +31,4 @@
         <attr name="bulletTextColor" format="color"/>
         <attr name="bulletText" format="string"/>
     </declare-styleable>
-
 </resources>

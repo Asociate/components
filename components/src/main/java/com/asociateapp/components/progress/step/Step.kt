@@ -10,7 +10,7 @@ import android.widget.LinearLayout
 import com.asociateapp.components.R
 import kotlinx.android.synthetic.main.step.view.*
 
-class Step @JvmOverloads constructor(
+internal class Step @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null,
     defStyleAttr: Int = 0,
@@ -23,6 +23,18 @@ class Step @JvmOverloads constructor(
         inflateLayout()
         setBaseStepAttributes()
         drawStep(step_icon, false)
+        setClickListener()
+    }
+
+    private var position: Int = 0
+    private var stepClickListener: OnStepClickListener? = null
+
+    internal fun assignPosition(position: Int) {
+        this.position = position
+    }
+
+    internal fun setOnStepClickListener(listener: OnStepClickListener) {
+        this.stepClickListener = listener
     }
 
     internal fun markAsCompleted(animate: Boolean) {
@@ -55,4 +67,10 @@ class Step @JvmOverloads constructor(
     }
 
     private fun isCompleted() = this.state == StepState.COMPLETED
+
+    private fun setClickListener() {
+        this.setOnClickListener {
+            stepClickListener?.onStepClick(position)
+        }
+    }
 }

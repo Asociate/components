@@ -1,6 +1,6 @@
 package com.asociateapp.components.progress.step
 
-enum class StepState {
+internal enum class StepState {
     COMPLETED,
     IDLE
 }

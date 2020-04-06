@@ -7,7 +7,7 @@ import android.widget.LinearLayout
 import androidx.core.content.ContextCompat
 import com.asociateapp.components.R
 
-class StepStyler(private val context: Context) {
+internal class StepStyler(private val context: Context) {
 
     internal var roadsAvailable = false
     internal var stepSize = context.resources.getDimensionPixelSize(StepDefaultValues.stepSize)
