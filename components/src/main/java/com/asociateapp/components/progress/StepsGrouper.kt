@@ -1,4 +1,4 @@
-package com.asociateapp.components
+package com.asociateapp.components.progress
 
 interface StepsGrouper {
     fun goToNext()

@@ -6,7 +6,6 @@ import android.util.AttributeSet
 import android.view.Gravity
 import android.widget.LinearLayout
 import com.asociateapp.components.R
-import com.asociateapp.components.StepsGrouper
 import com.asociateapp.components.progress.step.OnStepClickListener
 import com.asociateapp.components.progress.step.Step
 import com.asociateapp.components.progress.step.StepStyler
@@ -90,6 +89,7 @@ class AsociateStepsIndicator @JvmOverloads constructor(
             var childCount = 0
             while (childCount < this.stepsCount) {
                 val step = Step(context, stepStyler = this.stepStyler).apply {
+                    tag = "Step$childCount"
                     assignPosition(childCount)
                     setOnStepClickListener(this@AsociateStepsIndicator)
                 }

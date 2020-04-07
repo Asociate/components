@@ -7,7 +7,6 @@ import android.util.Log
 import android.view.Gravity
 import android.widget.LinearLayout
 import com.asociateapp.components.R
-import com.asociateapp.components.StepsGrouper
 import com.asociateapp.components.progress.road.HorizontalRoad
 import com.asociateapp.components.progress.road.Road
 import com.asociateapp.components.progress.road.RoadStyler
