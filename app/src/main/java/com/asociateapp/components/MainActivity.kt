@@ -25,11 +25,11 @@ class MainActivity : AppCompatActivity(), OnIndicatorClickListener {
         setContentView(R.layout.activity_main)
 
         btn_go_next.setOnClickListener {
-            asociate_steps_progress.goToNextStep()
+            asociate_steps_progress.goToNext()
         }
 
         btn_return_previous.setOnClickListener {
-            asociate_steps_progress.returnToPreviousStep()
+            asociate_steps_progress.returnToPrevious()
         }
 
         steps_indicator.setIndicatorClickListener(this)

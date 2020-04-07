@@ -6,6 +6,7 @@ import android.util.AttributeSet
 import android.view.Gravity
 import android.widget.LinearLayout
 import com.asociateapp.components.R
+import com.asociateapp.components.StepsGrouper
 import com.asociateapp.components.progress.step.OnStepClickListener
 import com.asociateapp.components.progress.step.Step
 import com.asociateapp.components.progress.step.StepStyler
@@ -14,7 +15,15 @@ class AsociateStepsIndicator @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null,
     defStyleAttr: Int = 0
-) : LinearLayout(context, attrs, defStyleAttr), OnStepClickListener {
+) : LinearLayout(context, attrs, defStyleAttr), StepsGrouper, OnStepClickListener {
+
+    override fun goToNext() {
+        onStepClick(selectedPosition + 1)
+    }
+
+    override fun returnToPrevious() {
+        onStepClick(selectedPosition - 1)
+    }
 
     override fun onStepClick(position: Int) {
         if (position == selectedPosition) {

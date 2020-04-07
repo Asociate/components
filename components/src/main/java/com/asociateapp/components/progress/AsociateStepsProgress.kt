@@ -7,6 +7,7 @@ import android.util.Log
 import android.view.Gravity
 import android.widget.LinearLayout
 import com.asociateapp.components.R
+import com.asociateapp.components.StepsGrouper
 import com.asociateapp.components.progress.road.HorizontalRoad
 import com.asociateapp.components.progress.road.Road
 import com.asociateapp.components.progress.road.RoadStyler
@@ -17,7 +18,7 @@ class AsociateStepsProgress @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null,
     defStyleAttr: Int = 0
-) : LinearLayout(context, attrs, defStyleAttr) {
+) : LinearLayout(context, attrs, defStyleAttr), StepsGrouper {
 
     private var stepStyler = StepStyler(context)
     private var roadStyler = RoadStyler(context)
@@ -30,7 +31,7 @@ class AsociateStepsProgress @JvmOverloads constructor(
     private var initialSetUpCompleted = false
     private var stepsCount = 0
 
-    fun goToNextStep() {
+    override fun goToNext() {
         val nextPosition = currentPosition + 1
         if (nextPosition == childCount) {
             return
@@ -39,7 +40,7 @@ class AsociateStepsProgress @JvmOverloads constructor(
         markCurrentStepAsCompleted(true)
     }
 
-    fun returnToPreviousStep() {
+    override fun returnToPrevious() {
         val previousPosition = currentPosition - 1
         if (previousPosition < 0) {
             return
