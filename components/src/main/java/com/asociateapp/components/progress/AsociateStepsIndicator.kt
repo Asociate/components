@@ -38,6 +38,14 @@ class AsociateStepsIndicator @JvmOverloads constructor(
         updateSelectedPosition(position)
     }
 
+    fun disable() {
+        setAvailability(false)
+    }
+
+    fun enable() {
+        setAvailability(true)
+    }
+
     private var indicatorClickListener: OnIndicatorClickListener? = null
 
     fun setIndicatorClickListener(listener: OnIndicatorClickListener) {
@@ -120,6 +128,15 @@ class AsociateStepsIndicator @JvmOverloads constructor(
 
     private fun updateSelectedPosition(newPosition: Int) {
         this.selectedPosition = newPosition
+    }
+
+    private fun setAvailability(enable: Boolean) {
+        var childPosition = 0
+        while(childPosition < childCount) {
+            val child = getChildAt(childPosition)
+            child.isEnabled = enable
+            childPosition += 1
+        }
     }
 
 }
