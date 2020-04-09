@@ -17,10 +17,16 @@ class AsociateStepsIndicator @JvmOverloads constructor(
 ) : LinearLayout(context, attrs, defStyleAttr), StepsGrouper, OnStepClickListener {
 
     override fun goToNext() {
+        if (selectedPosition + 1 == childCount) {
+            return
+        }
         onStepClick(selectedPosition + 1)
     }
 
     override fun returnToPrevious() {
+        if (selectedPosition == 0) {
+            return
+        }
         onStepClick(selectedPosition - 1)
     }
 
@@ -138,5 +144,4 @@ class AsociateStepsIndicator @JvmOverloads constructor(
             childPosition += 1
         }
     }
-
 }
