@@ -47,7 +47,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        app:message="Tenes proyectos para corregir papu"
+        app:messageType="elevated"
+        app:message="Aún no verificaste tu correo. ¡Verificalo y completá tu perfil!"
         app:icon="@drawable/ic_warning_black_24dp"
         app:layout_constraintTop_toBottomOf="@id/steps_indicator"/>
 

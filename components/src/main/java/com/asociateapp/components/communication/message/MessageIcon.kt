@@ -10,7 +10,7 @@ import com.asociateapp.components.R
 internal class MessageIcon(context: Context) : ImageView(context) {
 
     init {
-        buildParams(context)
+        buildParams()
         setBackground(null)
         setScale()
         applyFilter(context)
@@ -20,8 +20,8 @@ internal class MessageIcon(context: Context) : ImageView(context) {
         setImageDrawable(drawable)
     }
 
-    private fun buildParams(context: Context) {
-        val size = context.resources.getDimensionPixelSize(R.dimen.message_icon_size)
+    private fun buildParams() {
+        val size = resources.getDimensionPixelSize(R.dimen.message_icon_size)
         this.layoutParams = LinearLayout.LayoutParams(size, size)
     }
 

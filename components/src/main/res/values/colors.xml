@@ -6,4 +6,6 @@
     <color name="text_secondary">#757575</color>
     <color name="text_primary">#1A1818</color>
     <color name="secondary_green">#E8F4F1</color>
+    <color name="light_gray">#EEEEEE</color>
+    <color name="white">#FFF</color>
 </resources>

@@ -7,5 +7,10 @@
     <dimen name="bullet_size">5dp</dimen>
     <dimen name="bullet_text_size">14sp</dimen>
 
-    <dimen name="message_icon_size">48dp</dimen>
+    <dimen name="message_icon_size">44dp</dimen>
+    <dimen name="message_icon_vertical_margin">12dp</dimen>
+    <dimen name="message_icon_horizontal_margin">16dp</dimen>
+    <dimen name="message_radius">12dp</dimen>
+    <dimen name="message_elevation">4dp</dimen>
+    <dimen name="message_text_size">12sp</dimen>
 </resources>
